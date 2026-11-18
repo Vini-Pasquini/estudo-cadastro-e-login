@@ -3,7 +3,7 @@ import React from "react";
 export default function UsernameInput({username, setUsername}:{username:string, setUsername:any}) {
     return (
         <>
-            <span>Usuario: </span>
+            <span className="input-field-name">Usuario: </span>
             <input
                 type="text"
                 placeholder="Nome de Usuário..."

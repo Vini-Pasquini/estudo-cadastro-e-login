@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import UsernameInput from "./UsernameInput";
 import PasswordInput from "./PasswordInput";
-import LoginButton from "./LoginButton";
+import BackButton from "./BackButton";
+import ConfirmButton from "./ConfirmButton";
 
-export default function LoginPanel() {
+export default function LoginPanel({setSession, setRegister}:{setSession:any, setRegister:any}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
     function onLoginButtonClick() {
-        alert("Logado como: " + username)
+        // verificar se usuario existe no db
+        // validar a senha do usuario
+            // se login falhar, dizer "usuario ou senha incorreto"
+        // logar
+        setSession(true)
     }
 
     return (
@@ -18,10 +23,20 @@ export default function LoginPanel() {
                 setUsername={setUsername}
             />
             <PasswordInput
+                fieldName="Senha"
                 password={password}
                 setPassword={setPassword}
             />
-            <LoginButton onClick={onLoginButtonClick}/>
+            <div className="button-row">
+                <BackButton
+                    buttonText="Criar conta..."
+                    onClick={() => setRegister(true)}
+                />
+                <ConfirmButton
+                    buttonText="Entrar"
+                    onClick={onLoginButtonClick}
+                />
+            </div>
         </div>
     );
 }

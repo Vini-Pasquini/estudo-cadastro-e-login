@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-export default function PasswordInput({password, setPassword}:{password:string, setPassword:any}) {
+export default function PasswordInput({fieldName, password, setPassword}:{fieldName:string, password:string, setPassword:any}) {
     const [isViewingPassword, setViewingPassword] = useState(false)
     
     return (
         <>
-            <span>Senha: </span>
+            <span className="input-field-name">{fieldName}: </span>
             <div>
                 <input
                     type={isViewingPassword ? "text" : "password"}

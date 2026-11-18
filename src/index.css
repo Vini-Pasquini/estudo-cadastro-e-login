@@ -11,3 +11,16 @@ body {
   display: grid;
   justify-content: center;
 }
+
+.input-field-name {
+  margin-top: 5%;
+}
+
+.button-row {
+  display: flex;
+  margin-top: 10%;
+}
+
+.button-row > * {
+  flex: 1;
+}

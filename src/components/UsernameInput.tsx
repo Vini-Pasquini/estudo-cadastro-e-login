@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function UsernameInput({username, setUsername}:{username:string, setUsername:any}) {
     return (
         <>

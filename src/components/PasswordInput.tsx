@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function PasswordInput({fieldName, password, setPassword}:{fieldName:string, password:string, setPassword:any}) {
     const [isViewingPassword, setViewingPassword] = useState(false)

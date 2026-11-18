@@ -1,28 +1,19 @@
-import React, { useState } from "react";
-import LoginPanel from "./components/LoginPanel";
-import RegisterPanel from "./components/RegisterPanel";
+import { useState } from "react";
 import { createRoot } from "react-dom/client";
+import CredentialsPanel from "./components/CredentialsPanel";
+import ProfilePanel from "./components/ProfilePanel";
 
 function App() {
-    const [registerUser, setRegisterUser] = useState(false)
     const [session, setSession] = useState(false) // ph
 
-    let buttonText = registerUser ? "Entrar com conta..." : "Criar nova conta..."
-
     return (
-        <div style={session ? {backgroundColor: "#a0ffa0"} : {}}>
-            { registerUser ? 
-                <RegisterPanel
-                    setSession={setSession}
-                    setRegister={setRegisterUser}
-                /> 
+        <>
+            { session ?
+                <ProfilePanel setSession={setSession}/>
                 :
-                <LoginPanel
-                    setSession={setSession}
-                    setRegister={setRegisterUser}
-                /> 
+                <CredentialsPanel setSession={setSession}/>
             }
-        </div>
+        </>
     );
 }
 

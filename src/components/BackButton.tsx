@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function BackButton({buttonText, onClick}:{buttonText:string, onClick:any}) {
     return (
         <>
